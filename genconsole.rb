@@ -21,8 +21,9 @@ end
 
 modname = query("Console module name", "Console")
 
-exetplpath = File.expand_path(File.join(File.dirname(__FILE__), "executable_template.rb"))
-modtplpath = File.expand_path(File.join(File.dirname(__FILE__), "module_template.rb"))
+tpldir = File.expand_path(File.dirname(__FILE__) + "/templates")
+exetplpath = tpldir + "/executable_template.rb"
+modtplpath = tpldir + "/module_template.rb"
 
 exe = File.read(exetplpath)
 mod = File.read(modtplpath)
@@ -42,8 +43,7 @@ puts ""
 confirm = query("Create files?", "y/n/show").downcase
 
 case confirm
-when /^y/:
-  
+when "y", "yes", "yeah":
   FileUtils.mkdir_p(File.dirname(binpath))
   FileUtils.mkdir_p(File.dirname(modpath))
   File.open(binpath, "w"){|f| f.write(exe) }
@@ -66,5 +66,5 @@ when /^s/:
   puts "-"*50
   puts ""
 else
-  puts "Bye."  
+  puts "Bye."
 end
