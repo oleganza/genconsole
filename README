@@ -1,0 +1,11 @@
+
+genconsole.rb helps to create an IRb console for your app or library in interactive mode.
+It creates an executable (bin/console) and a module with helper methods (console.rb).
+You are asked for paths and module name (default is Console).
+
+This is a replacement for gem_console library (because i'm too lazy to bundle gem_console gem everywhere).
+Also, this is a good example of a rare case when static code generation is better than a library. 
+
+Author:  Oleg Andreev <oleganza@gmail.com>
+Date:    February 2, 2009
+License: WTFPL
