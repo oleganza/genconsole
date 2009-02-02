@@ -32,12 +32,6 @@ exe.gsub!(%r{/\.\./console}, "/" + "../"*(binpath.split("/").size-1) + modpath)
 
 mod.gsub!(/Console/, modname)
 
-puts "-----------------------------------"
-puts exe
-puts "-----------------------------------"
-puts mod
-puts "-----------------------------------"
-
 puts ""
 puts "Your configuration:"
 puts "  Path to executable: #{binpath}"
